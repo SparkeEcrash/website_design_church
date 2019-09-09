@@ -1,0 +1,20 @@
+.header {
+	background-image: url('./../../image/akira-hojo-_86u_Y0oAaM-unsplash.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+
+	&-title-one {
+		margin-left: 8rem;
+		.heading-primary {
+			font-size: 3.8rem;
+		}
+		.button {
+			width: 20rem;
+			margin-top: 2rem;
+		}
+	}
+}

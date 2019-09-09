@@ -1,0 +1,23 @@
+.button {
+	font-family: $font-secondary;
+	font-weight: 700;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.8rem;
+	height: 50px;
+	cursor: pointer;
+
+	&--white_skyblue {
+		background-color: var(--bbc-white);
+		border: 2px solid var(--bbc-skyblue);
+		color: var(--bbc-skyblue);
+	}
+
+	&--white_black {
+		background-color: var(--bbc-white);
+		border: 2px solid var(--bbc-black);
+		color: var(--bbc-black);
+	}
+}
