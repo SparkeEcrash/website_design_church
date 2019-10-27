@@ -1,0 +1,45 @@
+.footer {
+	height: 15rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	background-color: lightblue;
+	padding: 1rem;
+
+	&-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 95%;
+
+		.footer-contact {
+			.heading-primary--main {
+				font-size: 2rem;
+				margin-bottom: .5rem;
+			}
+			.heading-primary--sub {
+				font-size: 1.5rem;
+			}
+		}
+
+		.footer-logo {
+			text-align: center;
+			.footer-social {
+				list-style-type: none;
+				font-size: 3.5rem;
+				cursor: pointer;
+				// .fa:not(:first-child):not(:last-child) {
+				.fa:not(:first-child) {
+					margin-left: 4rem;
+				}
+			}
+		}
+	}
+
+	&-bottom {
+		.heading-primary {
+			font-size: 1.5rem;
+		}
+	}
+}

@@ -1,0 +1,87 @@
+.service {
+	&-title {
+		display: flex;
+		justify-content: center;
+		padding: 5rem 0;
+		.heading-primary {
+			font-size: $font-m;
+		}
+	}
+	&-days {
+		display: flex;
+		padding: 0 4rem;
+		.service-day {
+			&_wednesday {
+				flex: 1;
+			}
+			&_sunday {
+				flex: 2;
+			}
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			align-items: center;
+			.heading-primary {
+				font-size: $font-s;
+			}
+			.service-activities {
+				width: 100%;
+				display: flex;
+				justify-content: space-evenly;
+				margin: 3rem 0;
+				.service-activity {
+					background-color: var(--bbc-skyblue);
+					background-color: lightblue;
+					height: 50rem;
+					width: 25rem;
+					border-radius: 3rem;
+					@include boxShadow;
+
+					&_image {
+						height: 40rem;
+						border-radius: 0rem 0rem 3rem 3rem;
+						background-color: white;
+						&--one {
+							background-image: url('./../../image_compressed/hannah-busing-G-_L3Eqkqmc-unsplash__1572150544_104.175.221.52.jpg');
+							background-repeat: no-repeat;
+							background-size: cover;
+							background-position: center;
+						}
+						&--two {
+							// background-image: url('./../../image/debby-hudson-sgdyBq6kheQ-unsplash.jpg');
+							background-image: url('./../../image_compressed/debby-hudson-sgdyBq6kheQ-unsplash__1572150475_104.175.221.52.jpg');
+							background-repeat: no-repeat;
+							background-size: cover;
+							background-position: center;
+						}
+						&--three {
+							// background-image: url('./../../image/aaron-burden-UIib0bAvWfs-unsplash.jpg');
+							background-image: url('./../../image_compressed/aaron-burden-UIib0bAvWfs-unsplash__1572150086_104.175.221.52.jpg');
+							background-repeat: no-repeat;
+							background-size: cover;
+							background-position: center;
+						}
+						&--four {
+							background-image: url('./../../image_compressed/nicole-honeywill-sincerely-media-dGxOgeXAXm8-unsplash__1572150614_104.175.221.52.jpg');
+							background-repeat: no-repeat;
+							background-size: cover;
+							background-position: center;
+						}
+					}
+
+					&_caption {
+						height: 10rem;
+						display: flex;
+						flex-direction: column;
+						align-items: center;
+						justify-content: space-evenly;
+						text-align: center;
+						.heading-primary {
+							width: 20rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
