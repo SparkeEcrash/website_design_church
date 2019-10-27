@@ -1,5 +1,4 @@
 .join {
-	height: 70rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -10,7 +9,7 @@
 		flex-direction: column;
 		align-items: center;
 		.heading-primary {
-			font-size: 3.8rem;
+			font-size: $font-m;
 		}
 		.button {
 			width: 20rem;
@@ -30,21 +29,17 @@
 			text-align: center;
 			margin-left: -5rem;
 			.heading-primary {
-				font-size: 3.8rem;
+				font-size: $font-m;
 			}
 			.address {
 				margin-top: 3rem;
 				.heading-primary {
-					font-size: 1.8rem;
+					font-size: $font-s;
 				}
 			}
 		}
 		&-map {
 			flex:1;
-			#map {
-				width: 65rem;
-				height: 45rem;
-			}
 		}
 	}
 }

@@ -1,0 +1,142 @@
+.directions {
+	padding: 5rem;
+	&-title {
+		display: flex;
+		justify-content: center;
+		padding-bottom: 3rem;
+		.heading-primary {
+			font-size: $font-m;
+		}
+	}
+	&-location {
+		display: flex;
+		.directions-address {
+			display: flex;
+			flex:1;
+			align-items: center;
+			flex-direction: column;
+			.location-map {
+				margin-top: 2rem;
+				@include respond(1400px) {
+					transform: scale(.9);
+				}
+			}
+		}
+		.directions-photos {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			flex: 1;
+			align-items: center;
+			justify-content: center;
+			text-align:center;
+			.directions-photo-container {
+				height: 45rem;
+				width: 100%;
+				position: relative;
+				@include respond(1600px) {
+					height: 36rem;
+					transform: scale(.8);
+				}
+				@include respond(1400px) {
+					height: 31.5rem;
+					transform: scale(.7);
+				}
+				.directions-photo {
+					height: 23rem;
+					width: 45rem;
+					transform: translate(-50%,-50%);
+					position: absolute;
+					&--one {
+						top: 27%;
+						left: 29%;
+						background-color: greenyellow;
+					}
+					&--two {
+						top: 40%;
+						left: 70%;
+						background-color: goldenrod;
+					}
+					&--three {
+						top: 72%;
+						left: 52%;
+						background-color: lightseagreen;
+					}
+				}
+			}
+			.directions-photos-description {
+				padding-top: 2rem;
+			}
+		}
+	}
+	&-amenities {
+		padding-top: 5rem;
+		display: flex;
+		.directions-nursery {
+			display: flex;
+			flex-direction: column;
+			position: relative;
+			flex: 1;
+			align-items: center;
+			justify-content: center;
+			text-align:center;
+			.directions-photo-container {
+				height: 45rem;
+				width: 100%;
+				position: relative;
+				@include respond(1600px) {
+					height: 36rem;
+					transform: scale(.8);
+				}
+				@include respond(1400px) {
+					height: 31.5rem;
+					transform: scale(.7);
+				}
+				.directions-photo {
+					height: 23rem;
+					width: 45rem;
+					transform: translate(-50%,-50%);
+					position: absolute;
+					&--one {
+						top: 27%;
+						left: 29%;
+						background-color: greenyellow;
+					}
+					&--two {
+						top: 40%;
+						left: 70%;
+						background-color: goldenrod;
+					}
+					&--three {
+						top: 72%;
+						left: 52%;
+						background-color: lightseagreen;
+					}
+				}
+			}
+			.directions-photos-description {
+				padding-top: 2rem;
+				width: 60rem;
+			}
+		}
+		.directions-parking {
+			display: flex;
+			flex:1;
+			align-items: center;
+			flex-direction: column;
+			&_map {
+				margin-top: 2rem;
+				height: 550px;
+				width: 700px;
+				background-image: url('./../../image/parking.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				@include respond(1400px) {
+					height: 440px;
+					width: 560px;
+				}
+			}
+		}
+	}
+}

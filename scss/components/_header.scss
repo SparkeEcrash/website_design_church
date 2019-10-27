@@ -1,5 +1,5 @@
 .header {
-	background-image: url('./../../image/akira-hojo-_86u_Y0oAaM-unsplash.jpg');
+	background-image: url('./../../image_compressed/akira-hojo-_86u_Y0oAaM-unsplash__1572151026_104.175.221.52.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -10,7 +10,7 @@
 	&-title-one {
 		margin-left: 8rem;
 		.heading-primary {
-			font-size: 3.8rem;
+			font-size: $font-m;
 		}
 		.button {
 			width: 20rem;

@@ -1,13 +1,19 @@
-@import "./base/_colors.scss";
+@import "./base/_colors";
 @import "./base/_typography";
-@import "./base/_base.scss";
-@import "./base/_shared.scss";
+@import "./base/_base";
+@import "./base/_shared";
+@import "./base/_abstracts";
+@import "./base/_mixins";
 
 @import "./layout/_footer";
 @import "./layout/_content";
 @import "./layout/_navigation";
 
+@import "./components/_banner";
 @import "./components/_header";
 @import "./components/_join";
+@import "./components/_service";
+@import "./components/_directions";
+@import "./components/_programs";
 
 @import "./views/home";

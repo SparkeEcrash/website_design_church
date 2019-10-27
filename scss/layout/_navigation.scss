@@ -8,6 +8,11 @@
 	left: 0;
 	transition: background-color .2s, padding .2s;
 	z-index:100;
+
+	@include respond(big-desktop) {
+		padding: 2rem;
+	}
+
 	.nav-left {
 		.heading-primary {
 			font-size: 3.5rem;
@@ -19,6 +24,7 @@
 			font-size: 2rem;
 			text-transform: uppercase;
 			margin: 0 1rem;
+			cursor: pointer;
 		}
 	}
 }
