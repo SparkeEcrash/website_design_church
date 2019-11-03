@@ -6,8 +6,8 @@ const sass = require('gulp-sass');
 
 // File paths
 const DIST_PATH = 'public/dist';
-const SCRIPTS_PATH = 'public/js/*.js';
-const SASS_PATH = ['public/scss/*.scss', 'public/scss/**/*.scss'];
+const SCRIPTS_PATH = 'js/*.js';
+const SASS_PATH = ['scss/*.scss', 'scss/**/*.scss'];
 
 gulp.task('default', (done) => {
 	console.log("this is the default task");
@@ -17,7 +17,14 @@ gulp.task('default', (done) => {
 //Scripts
 gulp.task('scripts', () => {
 	console.log('starting scripts task');
-	return gulp.src('public/js/*.js')
+	return gulp.src('js/*.js')
+		.pipe(gulp.dest(DIST_PATH));
+});
+
+//Scripts Compressed
+gulp.task('scripts-compressed', () => {
+	console.log('starting scripts task');
+	return gulp.src('js/*.js')
 		.pipe(uglify())
 		.pipe(gulp.dest(DIST_PATH));
 });
@@ -25,7 +32,7 @@ gulp.task('scripts', () => {
 //Styles
 gulp.task('sass', () => {
 	console.log('starting sass task');
-	return gulp.src('public/scss/styles.scss')
+	return gulp.src('scss/styles.scss')
 	.on('error', err => {
 		console.log(err.toString());
 		this.emit('end')
@@ -34,10 +41,26 @@ gulp.task('sass', () => {
 	.pipe(autoprefixer({
 		cascade: false
 	}))
+	.pipe(sass())
+	.pipe(sourcemaps.write())
+	.pipe(gulp.dest(DIST_PATH));
+});
+
+
+//Styles Compressed
+gulp.task('sass-compressed', () => {
+	console.log('starting sass task');
+	return gulp.src('scss/styles.scss')
+	.on('error', err => {
+		console.log(err.toString());
+		this.emit('end')
+	})
+	.pipe(autoprefixer({
+		cascade: false
+	}))
 	.pipe(sass({
 		outputStyle: 'compressed'
 	}))
-	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(DIST_PATH));
 });
 

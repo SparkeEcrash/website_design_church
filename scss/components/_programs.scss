@@ -1,0 +1,42 @@
+.programs {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 5rem;
+
+	&-card {
+		height: 35rem;
+		width: 80%;
+		border-radius: 3rem;
+		display: flex;
+		@include boxShadow;
+		
+		&:not(:last-of-type) {
+			margin-bottom: 5rem;
+		}
+
+		.program-panel-left {
+			width: 40rem;
+			border-radius: 3rem 0 0 3rem;
+			.program-title {
+				padding: 3rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				.heading-primary--main {
+					font-size: $font-ms;
+					text-align: center;
+				}
+				.heading-primary--sub {
+					margin-top: 1.5rem;
+					font-size: $font-s;
+				}
+			}
+		}
+		.program-panel-right {
+			background-color: pink;
+			border-radius: 0 3rem 3rem 0;
+			flex: 1;
+		}
+	}
+}
