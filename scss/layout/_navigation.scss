@@ -1,3 +1,5 @@
+$collapse-width: 1200px;
+
 .navigation {
 	padding: 4rem;
 	display: flex;
@@ -13,18 +15,134 @@
 		padding: 2rem;
 	}
 
+	@include respond(1200px) {
+		padding: 2rem;
+	}
+
 	.nav-left {
 		.heading-primary {
 			font-size: 3.5rem;
 			text-transform: uppercase;
+			@include noselect;
+
 		}
 	}
 	.nav-right {
-		.heading-secondary {
-			font-size: 2rem;
-			text-transform: uppercase;
-			margin: 0 1rem;
-			cursor: pointer;
+		.navigation-collapse {
+			.navigation-button {
+				display: none;
+				height: 45px;
+				width: 50px;
+				cursor: pointer;
+
+				@include respond($collapse-width) {
+					display: flex;
+					align-items: center;
+				}
+			}
+
+			.navigation-checkbox {
+				display: none;
+			}
+
+			.navigation-checkbox:checked + .navigation-button .navigation-icon::before {
+				top: 0;
+				transform: rotate(135deg);
+			}
+
+			.navigation-checkbox:checked + .navigation-button .navigation-icon::after {
+				top: 0;
+				transform: rotate(-135deg);
+			}
+
+			.navigation-checkbox:checked + .navigation-button .navigation-icon {
+				background-color: transparent;
+			}
+
+			.navigation-checkbox:checked ~ .navigation-menu {
+				top: 87px; //navbar height
+				position: absolute;
+				visibility: visible;
+				width: 100%;
+				left: 0;
+				display: block;
+
+				.navigation-menu__item {
+					position: relative;
+					padding: 1rem 2rem;
+					text-align: right;
+					height: 22px;
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+					&:last-of-type {
+						padding-bottom: 2rem;
+					}
+					.heading-secondary {
+						font-size: 2rem;		
+					}
+				}
+			}
+
+			.navigation-icon {
+				position: relative;
+				transition: background-color .2s, width .2s;
+
+				&,
+				&::before,
+				&::after {
+					width: 50px;
+					height: 5px;
+					background-color: white;
+					display: inline-block;
+					border-radius: 40px;
+				}
+
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					left: 0;
+					transition: all .2s;
+				}
+
+				&::before {
+					top: -17px;
+				}
+
+				&::after {
+					top: 17px;
+				}
+			}
+
+			.navigation-menu {
+				list-style: none;
+				display: flex;
+
+				@include respond($collapse-width) {
+					visibility: hidden;
+					width: 0;
+					height: 0;
+				}
+
+				.navigation-menu__item {
+					transition: background-color .2s, height .2s;
+					@include respond($collapse-width) {
+					height: 0;
+					}
+					.heading-secondary {
+						@include noselect;
+						font-size: 2rem;
+						text-transform: uppercase;
+						margin: 0 1rem;
+						cursor: pointer;
+						transition: font-size .2s;
+						@include respond($collapse-width) {
+							font-size: 0.1rem;
+						}	
+					}
+				}
+			}
 		}
 	}
 }
@@ -32,4 +150,27 @@
 .navigation.navigation-toggle {
 	background-color: var(--bbc-white);
 	padding: 2rem;
+	// @include respond(1250px) {
+	// 	padding: 1rem;
+	// }
+	// @include respond(1200px) {
+	// 	padding: 2rem;
+	// }
+
+	.nav-right {
+		.navigation-collapse {
+			.navigation-icon {
+				&,
+				&::before,
+				&::after {
+					background-color: black;
+				}
+			}
+			.navigation-checkbox:checked ~ .navigation-menu {
+				.navigation-menu__item {
+					background-color: var(--bbc-white);
+				}
+			}
+		}
+	}
 }
