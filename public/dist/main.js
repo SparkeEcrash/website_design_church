@@ -19,4 +19,11 @@ $(document).ready(function() {
 		let position = $(this).scrollTop();
 		setNav(position);
 	})
+	if(document.getElementById("navigation-toggle")) {
+		window.addEventListener("resize", function() {
+			if(window.innerWidth > 1200) {
+				$("#navigation-toggle").prop("checked", false);
+			};
+		});
+	}
 })
